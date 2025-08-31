@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/client";
 import Image from "next/image";
 const builder = imageUrlBuilder(client);
-function urlFor(source: any) {
+function urlFor(source: SanityDocument) {
   return builder.image(source);
 }
 const POSTS_QUERY = `*[
