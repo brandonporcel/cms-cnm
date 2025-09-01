@@ -10,7 +10,7 @@ import Header from "@/components/header";
 
 export default function HomeClient({ films }: { films: Film[] }) {
   const [active, setActive] = useState(films[0]);
-
+  console.log("active", active);
   return (
     <div
       className="min-h-screen relative overflow-hidden pl-8"

@@ -1,7 +1,4 @@
-import Image from "next/image";
-
 import Film from "@/types/film";
-import urlFor from "@/lib/sanityImage";
 
 import Poster from "../poster";
 import Carousel from "./carousel";

@@ -56,7 +56,7 @@ function Poster({ url, alt }: { url: SanityImageAssetDocument; alt: string }) {
             >
               <motion.button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors cursor-pointer h-10 w-10"
                 aria-label="Close modal"
                 initial={{ scale: 0, rotate: -90 }}
                 animate={{ scale: 1, rotate: 0 }}
