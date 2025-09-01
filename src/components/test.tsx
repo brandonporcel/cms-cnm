@@ -1,22 +1,23 @@
-import { type SanityDocument } from "next-sanity";
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
+import { type SanityDocument } from "next-sanity";
 
 import { client } from "@/sanity/client";
-import Image from "next/image";
+
 const builder = imageUrlBuilder(client);
 function urlFor(source: SanityDocument) {
   return builder.image(source);
 }
 const POSTS_QUERY = `*[
-  _type == "movie"
+  _type == "film"
   && defined(slug.current)
-]|order(releaseDate desc)[0...12]{_id, title, slug, releaseDate, poster}`;
+]|order(releaseYear desc)[0...12]{_id, title, slug, releaseYear, poster}`;
 
 const options = { next: { revalidate: 30 } };
 
 export default async function IndexPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
-
+  return null;
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8">
       <h1 className="text-4xl font-bold mb-8">Posts</h1>
